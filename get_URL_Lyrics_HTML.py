@@ -49,7 +49,7 @@ def artist_page(artist):
     '''
     input_url = make_url(artist)
     input_page = get_content(input_url, headers)
-    exctraction = re.findall('"artist\/(.+?)"', input_page)
+    exctraction = re.findall(r'"artist\/(.+?)"', input_page)
     # print(exctraction)
     print("Is this artist the right one which you are searching?:",
           exctraction[0])
@@ -66,7 +66,7 @@ def find_songs_url(response):
     - finds all texts that includes url part in main content page for every songs of artist \n
     - returns into a list of HTML \n
     '''
-    exctraction = re.findall('"\/lyric\/(.+?)"', response)
+    exctraction = re.findall(r'"\/lyric\/(.+?)"', response)
     return list(exctraction)
 
 
