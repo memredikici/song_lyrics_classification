@@ -47,7 +47,7 @@ create_save_dataframe(first_lyrics_text, first_artist)
 create_save_dataframe(second_lyric_texts, second_artist)
 
 print('-+-' * 15)
-print('-'*15 + 'MACHINE LEARNING' + '-'*15)
+print('-' * 15 + 'MACHINE LEARNING' + '-' * 15)
 
 df_first = read_csv(first_artist)
 df_second = read_csv(second_artist)

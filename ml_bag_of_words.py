@@ -17,7 +17,9 @@ def read_csv(artist_name):
     '''
     - reads the dataframe
     '''
-    return pd.read_csv(f'./data/dataframes/{artist_name}_lyrics.csv', index_col=0)
+    return pd.read_csv(
+        f'./data/dataframes/{artist_name}_lyrics.csv',
+        index_col=0)
 
 
 def drop_duplicates(dataframe):
@@ -76,7 +78,10 @@ def create_list_of_parameters(param_name):
         return param_list
 
 
-def get_GridSearch_hyperparameters(ngram_range=[(1.1), (1, 2)], max_df=[1.0], min_df=[1], log_C=[0.1, 1.0, 10, 100]):
+def get_GridSearch_hyperparameters(
+    ngram_range=[
+        (1.1), (1, 2)], max_df=[1.0], min_df=[1], log_C=[
+            0.1, 1.0, 10, 100]):
     '''
     - creates a dictionary of parameters for GridSearch
     '''
@@ -100,8 +105,13 @@ def grid_initialise_and_fit(model_name, param_grid, n_jobs, input_X, output_y):
     - initialises GridSearch \n
     - fits GridSearch for selected input and output
     '''
-    grid_cv = GridSearchCV(estimator=model_name, param_grid=param_grid,
-                           cv=5, return_train_score=True, scoring='accuracy', n_jobs=int(n_jobs))
+    grid_cv = GridSearchCV(
+        estimator=model_name,
+        param_grid=param_grid,
+        cv=5,
+        return_train_score=True,
+        scoring='accuracy',
+        n_jobs=int(n_jobs))
     print("model is fitting... it may take a while!")
     grid_cv.fit(input_X, output_y)
     print('Model is fitted!')
@@ -130,7 +140,7 @@ def make_a_prediction(model):
     - makes a prediction for input strings.
     '''
     check = True
-    while check == True:
+    while check:
         test = []
         word = input('please enter something to be predicted:')
         test.append(word)

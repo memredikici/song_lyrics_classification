@@ -11,7 +11,7 @@ def lyrics_extracting(artist_name):
     - as parameter it takes the folder name which includes HTML files of songs.\n
     - get HTML files for each song.\n
     - extracts lyrics and saves into a list.\n
-    - returns if lyrics are already extracted. 
+    - returns if lyrics are already extracted.
     '''
     lyrics_text = []
     i = 0
